@@ -1,0 +1,7 @@
+Script started on Mon 29 Aug 2022 07:52:47 PM HST
+]0;moshir@uhx02:~/ics212/homework1[?1034huhx02:/home/m/moshir/ics212/homework1% exit-gcc -ansi -pedantic-errors -Wall -c homework1.c[1P
+]0;moshir@uhx02:~/ics212/homework1uhx02:/home/m/moshir/ics212/homework1% gcc -o homework1 homework1.o
+]0;moshir@uhx02:~/ics212/homework1uhx02:/home/m/moshir/ics212/homework1% exit
+exit
+
+Script done on Mon 29 Aug 2022 07:53:05 PM HST

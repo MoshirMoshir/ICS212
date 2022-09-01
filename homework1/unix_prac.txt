@@ -1,0 +1,27 @@
+Script started on Mon 29 Aug 2022 07:54:45 PM HST
+]0;moshir@uhx02:~/ics212/homework1[?1034huhx02:/home/m/moshir/ics212/homework1% pwd
+/home/m/moshir/ics212/homework1
+]0;moshir@uhx02:~/ics212/homework1uhx02:/home/m/moshir/ics212/homework1% mkdir unix_prac
+]0;moshir@uhx02:~/ics212/homework1uhx02:/home/m/moshir/ics212/homework1% cp homeowrk1[K[K[K[K[K[Kework1 unix_prac/
+]0;moshir@uhx02:~/ics212/homework1uhx02:/home/m/moshir/ics212/homework1% cd h[Kunix_prac/
+]0;moshir@uhx02:~/ics212/homework1/unix_pracuhx02:/home/m/moshir/ics212/homework1/unix_prac% mv homework1 hw1
+]0;moshir@uhx02:~/ics212/homework1/unix_pracuhx02:/home/m/moshir/ics212/homework1/unix_prac% ./hw1
+Hello
+Hello
+World
+World
+!!!
+!!!
+While loop!
+While loop!
+While loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+]0;moshir@uhx02:~/ics212/homework1/unix_pracuhx02:/home/m/moshir/ics212/homework1/unix_prac% rm hw1 
+]0;moshir@uhx02:~/ics212/homework1/unix_pracuhx02:/home/m/moshir/ics212/homework1/unix_prac% cd ..
+]0;moshir@uhx02:~/ics212/homework1uhx02:/home/m/moshir/ics212/homework1% rmdir unix_prac/[K
+]0;moshir@uhx02:~/ics212/homework1uhx02:/home/m/moshir/ics212/homework1% exit
+exit
+
+Script done on Mon 29 Aug 2022 07:55:26 PM HST
