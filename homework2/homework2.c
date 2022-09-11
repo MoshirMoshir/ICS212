@@ -2,7 +2,7 @@
 //
 //  NAME:        Alexander Moshir
 //
-//  HOMEWORK:    1
+//  HOMEWORK:    2
 //
 //  CLASS:       ICS 212
 //
@@ -25,15 +25,13 @@
 //
 //  Function name: main
 //
-//  DESCRIPTION:   Don't forget to describe what your main
-//                 function does.
+//  DESCRIPTION:   Calls for a user input and prints out a table      
 //
 //  Parameters:    argc (int) : The number of elements in argv
 //                 argv (char*[]) : An array of arguments passed
 //                                  to the program.
 //
-//  Return values:  0 : some meaning
-//                 -1 : some meaning
+//  Return values:  0 : success           
 //
 ****************************************************************/
 
@@ -45,7 +43,7 @@ int main(int argc, char* argv[])
     print_table(number);
     
 
-
+    return 0;
 
 }
 
@@ -53,47 +51,42 @@ int main(int argc, char* argv[])
 //
 //  Function name: user_interface
 //
-//  DESCRIPTION:   A template function
-//                 This function does not do anything.
-//                 Please describe your function correctly.
+//  DESCRIPTION:   Prints out description and
+//                 gets user input. Rejects characters and
+//                 negative numbers but accepts floats at
+//                 it's lowest whole number
 //
-//  Parameters:    
-//
-//  Return values:  0 : success
+//  Return values:  input : user input int > 0
 //
 ****************************************************************/
 
 int user_interface()
 {
-    int intInput = 0;
+    int input = 0;
     printf("The second homework for ICS 212. Takes an int input \nfrom the user and outputs from 0 up until that number \nand identifies if each number is a multiple of 5.\n");
     
-    do
+
+    printf("Enter maximum number to show: ");
+    while(scanf("%d",&input) != 1 || input <= 0)
     {
-        printf("Enter a maximum number to show: ");
-        scanf("%d", &intInput);
-    } 
-    while (!(intInput > 0));
-    {
-        printf("That wasn't a valid number! Please try again: ");
-        scanf("%d", &intInput);
+        printf("That wasn't a valid number, please try again: ");
+        while(getchar() != '\n');
     }
 
-    return intInput;
+    return input;
 }
 
 /*****************************************************************
 //
 //  Function name: is_multiple4
 //
-//  DESCRIPTION:   A template function
-//                 This function does not do anything.
-//                 Please describe your function correctly.
+//  DESCRIPTION:   determines if int input is a
+//                 multiple of 4
 //
 //  Parameters:    int input
 //
 //  Return values:  1 : input is a multiple of 4
-                    0 : input is not a multiple of 4
+//                  0 : input is not a multiple of 4
 //
 ****************************************************************/
 
@@ -111,9 +104,9 @@ int is_multiple4(int input)
 //
 //  Function name: print_table
 //
-//  DESCRIPTION:   A template function
-//                 This function does not do anything.
-//                 Please describe your function correctly.
+//  DESCRIPTION:   prints a table of all whole numbers
+//                 from 0 up to number (user input) and
+//                 if they are multiples of 4.
 //
 //  Parameters:    int input
 //
@@ -124,15 +117,16 @@ int is_multiple4(int input)
 int print_table(int input)
 {
     int i;
-	printf("%*s\t", 3, "Number");
-	printf("%*s\n", 3, "Multiple of 4?");
-    for (i = 0; i < input; ++i)
+	printf("%3s\t", "Number");
+	printf("%3s\n", "Multiple of 4?");
+    for (i = 0; i <= input; ++i)
     {
-        printf("%*s\t", 3, "%d", i);
+        printf("%6d\t", i);
         if (is_multiple4(i))
-            printf("%*s\n", 3, "Yes");
+            printf("%3s\n", "Yes");
         else
-            printf("%*s\n", 3, "No");
+            printf("%2s\n", "No");
     }
 
+    return 0;
 }
