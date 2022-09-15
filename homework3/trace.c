@@ -20,7 +20,6 @@
         printf("%p\tc1\tchar\tMain\t%c\n", (void*) &c1, c1);
         printf("%p\tc2\tchar\tMain\t%c\n", (void*) &c2, c2);
         printf("%p\tscore1\tfloat\tMain\t%f\n", (void*) &score1, score1);
-        printf("%p\tca[]\tchar\tMain\t\n", (void*) &ca);
         printf("%p\tca[0]\tchar\tMain\t%c\n", (void*) &ca[0], ca[0]);
         printf("%p\tca[1]\tchar\tMain\t%c\n", (void*) &ca[1], ca[1]);
         printf("%p\tca[2]\tchar\tMain\t%c\n", (void*) &ca[2], ca[2]);
@@ -34,14 +33,14 @@
     {
         printf("%p\tx\tint\tdummy\t%d\n", (void*) &x, x);
         printf("%p\ty\tchar\tdummy\t%c\n", (void*) &y, y);
-        printf("%p\tx\tchar*\tdummy\t%p\n", (void*) &z, z);
-        printf("%p\tx\tfloat\tdummy\t%f\n", (void*) &w, w);
+        printf("%p\tz\tchar*\tdummy\t%p\n", (void*) &z, z);
+        printf("%p\tw\tfloat\tdummy\t%f\n", (void*) &w, w);
 
         x++;
         printf("%p\tx\tint\tdummy\t%d\n", (void*) &x, x);
         y++;
         printf("%p\ty\tchar\tdummy\t%c\n", (void*) &y, y);
         w = w + 2.1;
-        printf("%p\tx\tfloat\tdummy\t%f\n", (void*) &w, w);
+        printf("%p\tw\tfloat\tdummy\t%f\n", (void*) &w, w);
         /* pause here */
     }
