@@ -1,45 +1,47 @@
-#include <stdio.h>
+    #include <stdio.h>
 
-void dummy(int, char, char *, float);
+    void dummy(int, char, char *, float);
 
-int main(int argc, char* argv[])
-{
-    printf("Address of argc: %x\n", &argc);
-    printf("Content of argc: %d\n", &argc);
-    printf("Address of argv: %x\n", &argv);
-    printf("Content of argv: %p\n", &argv);
+    int main(int argc, char* argv[])
+    {
+        printf("Addresses\tName\tType\tScope\tValue\n");
+        printf("%p\targc\tint\tMain\t%d\n", (void*) &argc, argc);
+        printf("%p\targv[]\tchar*\tMain\t%p\n", (void*) &argv, argv);
 
-    int num1, num2 = 10;
-    char c1 = 'A';
-    char c2 = 'B';
-    float score1 = 20.5;
-    char ca[3] = "Hi";
 
-    printf("Address of num1: %x\n", &num1);
-    printf("Content of num1: %d\n", &num1);
-    printf("Address of num2: %x\n", &num2);
-    printf("Content of num2: %d\n", &num2);
-    printf("Address of c1: %x\n", &c1);
-    printf("Content of c1: %c\n", &c1);
-    printf("Address of c2: %x\n", &c2);
-    printf("Content of c2: %c\n", &c2);
-    printf("Address of score1: %x\n", &score1);
-    printf("Content of scpre1: %f\n", &score1);
-    printf("Address of ca: %p\n", &ca);
-    printf("Content of ca[0]: %c\n", &ca[0]);
-    printf("Content of ca[1]: %c\n", &ca[1]);
-    printf("Content of ca[2]: %c\n", &ca[2]);
+        int num1, num2 = 10;
+        char c1 = 'A';
+        char c2 = 'B';
+        float score1 = 20.5;
+        char ca[3] = "Hi";
 
-    dummy(num2, c1, ca, score1);
+        printf("%p\tnum1\tint\tMain\t%d\n", (void*) &num1, num1);
+        printf("%p\tnum2\tint\tMain\t%d\n", (void*) &num2, num2);
+        printf("%p\tc1\tchar\tMain\t%c\n", (void*) &c1, c1);
+        printf("%p\tc2\tchar\tMain\t%c\n", (void*) &c2, c2);
+        printf("%p\tscore1\tfloat\tMain\t%f\n", (void*) &score1, score1);
+        printf("%p\tca[]\tchar\tMain\t\n", (void*) &ca);
+        printf("%p\tca[0]\tchar\tMain\t%c\n", (void*) &ca[0], ca[0]);
+        printf("%p\tca[1]\tchar\tMain\t%c\n", (void*) &ca[1], ca[1]);
+        printf("%p\tca[2]\tchar\tMain\t%c\n", (void*) &ca[2], ca[2]);
 
-    return 0;
-}
+        dummy(num2, c1, ca, score1);
 
-void dummy(int x, char y, char* z, float w)
-{
-    x++;
-    y++;
-    w = w + 2.1;
+        return 0;
+    }
 
-    /* pause here */
-}
+    void dummy(int x, char y, char* z, float w)
+    {
+        printf("%p\tx\tint\tdummy\t%d\n", (void*) &x, x);
+        printf("%p\ty\tchar\tdummy\t%c\n", (void*) &y, y);
+        printf("%p\tx\tchar*\tdummy\t%p\n", (void*) &z, z);
+        printf("%p\tx\tfloat\tdummy\t%f\n", (void*) &w, w);
+
+        x++;
+        printf("%p\tx\tint\tdummy\t%d\n", (void*) &x, x);
+        y++;
+        printf("%p\ty\tchar\tdummy\t%c\n", (void*) &y, y);
+        w = w + 2.1;
+        printf("%p\tx\tfloat\tdummy\t%f\n", (void*) &w, w);
+        /* pause here */
+    }
