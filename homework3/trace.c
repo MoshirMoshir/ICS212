@@ -4,17 +4,15 @@
 
     int main(int argc, char* argv[])
     {
-        printf("Addresses\tName\tType\tScope\tValue\n");
-        printf("%p\targc\tint\tMain\t%d\n", (void*) &argc, argc);
-        printf("%p\targv[]\tchar*\tMain\t%p\n", (void*) &argv, argv);
-
-
         int num1, num2 = 10;
         char c1 = 'A';
         char c2 = 'B';
         float score1 = 20.5;
         char ca[3] = "Hi";
 
+        printf("Addresses\tName\tType\tScope\tValue\n");
+        printf("%p\targc\tint\tMain\t%d\n", (void*) &argc, argc);
+        printf("%p\targv[]\tchar*\tMain\t%p\n", (void*) &argv, argv);
         printf("%p\tnum1\tint\tMain\t%d\n", (void*) &num1, num1);
         printf("%p\tnum2\tint\tMain\t%d\n", (void*) &num2, num2);
         printf("%p\tc1\tchar\tMain\t%c\n", (void*) &c1, c1);
