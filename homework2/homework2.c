@@ -96,12 +96,16 @@ int user_interface()
 
 int is_multiple4(int input)
 {
+    int result;
     if ( input % 4 == 0)
     {
-        return 1;
+        result = 1;
     }
     else
-        return 0;
+    {
+        result = 0;
+    }
+    return result;
 }
 
 /*****************************************************************
@@ -121,8 +125,8 @@ int is_multiple4(int input)
 int print_table(int input)
 {
     int i;
-	printf("%3s\t", "Number");
-	printf("%3s\n", "Multiple of 4?");
+    printf("%3s\t", "Number");
+    printf("%3s\n", "Multiple of 4?");
     for (i = 0; i <= input; ++i)
     {
         printf("%6d\t", i);
