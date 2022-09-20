@@ -1,0 +1,22 @@
+0x7ffea5bd14bc  argc    int     Main    1
+0x7ffea5bd14b0  argv[]  char*   Main    0x7ffea5bd15d8
+0x7ffea5bd14c8  num1    int     Main    -1871069024
+0x7ffea5bd14cc  num2    int     Main    10
+0x7ffea5bd14c6  c1      char    Main    A
+0x7ffea5bd14c7  c2      char    Main    B
+0x7ffea5bd14d0  score1  float   Main    20.500000
+0x7ffea5bd14d5  ca[0]   char    Main    H
+0x7ffea5bd14d6  ca[1]   char    Main    i
+0x7ffea5bd14d7  ca[2]   char    Main
+0x7ffea5bd149c  x       int     dummy   10
+0x7ffea5bd1498  y       char    dummy   A
+0x7ffea5bd1490  z       char*   dummy   0x7ffea5bd14d5
+0x7ffea5bd148c  w       float   dummy   20.500000
+0x7ffea5bd149c  x       int     dummy   11
+0x7ffea5bd1498  y       char    dummy   B
+0x7ffea5bd148c  w       float   dummy   22.600000
+
+I think the most interesting thing I noticed was how the address don't seem to be going in order from a smaller number to a greater number;
+from the first 0x7ffea5bd14bc to 0x7ffea5bd14b0 alone it already is going to a "smaller" numbered address. It does seem if the type is the same,
+it will go from smaller to greater, but whenever it changes types, it will seemingly go to a random address close by (though there does seem to be
+a possible pattern to it)
