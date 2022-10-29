@@ -1,0 +1,32 @@
+-----------------------------------
+deleteRecord
+
+- start: The pointer to the first record of the list (or NULL)
+- uaccountno: The user's account number (integer)
+-----------------------------------
+
+define an int called OUT
+copy from -1 to OUT
+define a pointer to record called temp
+define a pointer to record called prev
+copy from start to temp
+
+while ( temp is not equal to NULL)
+{
+    while ( uaccountno is not equal to accountno in the record whose address is in temp || temp is not equal to NULL)
+    {
+        copy from temp to prev
+        copy from next in the record whose address is in temp to temp
+    }
+
+    if ( temp is not equal to NULL )
+    {
+        copy from next in the record whose address is in temp to prev
+        copy from 0 to OUT
+        release the space whose address is in temp
+        copy prev to next in the record whose address is in temp
+        copy from next in the record whose address is in prev to temp
+    }  
+}
+
+return OUT
