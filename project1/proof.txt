@@ -1,0 +1,14 @@
+Script started on Mon 31 Oct 2022 10:13:34 PM HST
+ls]0;moshir@uhx02:~/ics212/project1[?1034huhx02:/home/m/moshir/ics212/project1% ls
+database.c  database.h  Makefile  proof.txt  record.h  summary.txt  testplan.xlsx  user_interface.c
+]0;moshir@uhx02:~/ics212/project1uhx02:/home/m/moshir/ics212/project1% make
+gcc -ansi -pedantic-errors -Wall -c user_interface.c
+gcc -ansi -pedantic-errors -Wall -c database.c
+gcc -o project user_interface.o database.o
+]0;moshir@uhx02:~/ics212/project1uhx02:/home/m/moshir/ics212/project1% ls
+database.c  database.o  [0m[38;5;34mproject[0m    record.h     testplan.xlsx     user_interface.o
+database.h  Makefile    proof.txt  summary.txt  user_interface.c
+]0;moshir@uhx02:~/ics212/project1uhx02:/home/m/moshir/ics212/project1% exit
+exit
+
+Script done on Mon 31 Oct 2022 10:13:41 PM HST

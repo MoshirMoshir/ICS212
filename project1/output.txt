@@ -1,0 +1,258 @@
+Script started on Mon 31 Oct 2022 10:13:48 PM HST
+]0;moshir@uhx02:~/ics212/project1[?1034huhx02:/home/m/moshir/ics212/project1% ./project 
+
+database_data not found, creating new file...
+
+database is empty
+--------------------------------------------------
+Record Database Interface
+
+   Welcome to the RDI, with this program, you can 
+create a database of records that hold a Name, 
+Account Number, and Address.
+--------------------------------------------------
+
+Please type an option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+printall
+--------------------------------------------------
+
+database is empty
+
+--------------------------------------------------
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+invalid input
+
+error: option does not exist
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+
+error: option does not exist
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+add
+
+Input a name:
+test name 1
+
+Input an address:
+test address 1
+
+Input an account number:
+1000
+
+The account was added succesfully
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+printall
+--------------------------------------------------
+Name      : test name 1
+
+AccountNo : 1000
+Address   : test address 1
+
+--------------------------------------------------
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+add
+
+Input a name:
+test name 3
+
+Input an address:
+test address 3
+
+Input an account number:
+1002
+
+The account was added succesfully
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+printall
+--------------------------------------------------
+Name      : test name 3
+
+AccountNo : 1002
+Address   : test address 3
+
+--------------------------------------------------
+Name      : test name 1
+
+AccountNo : 1000
+Address   : test address 1
+
+--------------------------------------------------
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+add
+
+Input a name:
+test name 2
+
+Input an address:
+test address 2
+
+Input an account number:
+1001
+
+The account was added succesfully
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+printall
+--------------------------------------------------
+Name      : test name 3
+
+AccountNo : 1002
+Address   : test address 3
+
+--------------------------------------------------
+Name      : test name 2
+
+AccountNo : 1001
+Address   : test address 2
+
+--------------------------------------------------
+Name      : test name 1
+
+AccountNo : 1000
+Address   : test address 1
+
+--------------------------------------------------
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+find
+
+Type an account number to find:
+1000
+--------------------------------------------------
+Name      : test name 1
+
+AccountNo : 1000
+Address   : test address 1
+
+--------------------------------------------------
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+delete
+
+Type an account number to delete
+1000
+account 1000 was deleted
+account does not exist
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+find
+
+Type an account number to find:
+1000
+--------------------------------------------------
+Name      : test name 1
+
+AccountNo : 1000
+Address   : test address 1
+
+--------------------------------------------------
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+printall
+--------------------------------------------------
+Name      : test name 3
+
+AccountNo : 1002
+Address   : test address 3
+
+--------------------------------------------------
+Name      : test name 2
+
+AccountNo : 1001
+Address   : test address 2
+
+--------------------------------------------------
+Name      : test name 1
+
+AccountNo : 1000
+Address   : test address 1
+
+--------------------------------------------------
+
+Choose another option:
+add      : adds a new record to the database
+printall : prints all the records in the database
+find     : finds a record in the database
+delete   : deletes a record in the database
+quit     : quits the program
+quit
+
+Exiting the program...
+]0;moshir@uhx02:~/ics212/project1uhx02:/home/m/moshir/ics212/project1% exit[K[K[K[Kls
+database.c     database.h  Makefile    [0m[38;5;34mproject[0m    record.h     testplan.xlsx     user_interface.o
+database_data  database.o  output.txt  proof.txt  summary.txt  user_interface.c
+]0;moshir@uhx02:~/ics212/project1uhx02:/home/m/moshir/ics212/project1% exit
+exit
+
+Script done on Mon 31 Oct 2022 10:15:55 PM HST

@@ -1,0 +1,18 @@
+The majority of the code functions as intended though there are a few bugs that still need to be fixed;
+
+I was unable to properly fix the read function as on the original homework I was unable to complete it correctly and
+in this project I found it to work extremely inconsistently. Additionally, in my process to attempt to fix it, I managed to break my
+delete function, thus I was also unable to fix that since I most likely changed a piece of code somewhere that breaks the delete
+function while trying the fix the read function. I do know the write function works as intended as if there is only 1 address,
+the program is able to successfully read and write it, and the database_data gets written correctly. Somewhere my read function is rereading the file 
+causing for the address to duplicate and shift. I was unable to pinpoint the code that was causing this issue 
+and I was afraid of breaking anything else after I bricked my working delete function.
+
+Multiple Address lines do work, though there is an additional bug that sometimes puts the last few lines of a previous Address into the 
+next record's Address.
+
+All error and debug messages correctly displays if it occurs.
+
+All other functions properly and correctly executes when called.
+
+The program is able to run, but is unable to be fully utilized due to 2 broken functions.
