@@ -1,0 +1,82 @@
+Script started on Sun 25 Sep 2022 12:11:14 AM HST
+]0;micah43@uhx02:~/homework3b[?1034huhx02:/home/m/micah43/homework3b% ./user_interface debug
+
+Welcome user
+Please choose one of the following options
+add: This adds a new record in the database
+printall: This prints all record in the databse
+find: This finds record(s) with a specified amount
+delete: This deletes an existing record from the database
+quit: quits program
+add 
+You are adding a record, enter a name
+Bruce
+Enter an address (Press enter, or return, twice to finish)
+
+Get address function has started. inputAddress[]: ////////////////
+size: 60
+555 Star pet  ort
+sunch  shine way
+the moon
+
+Enter an account number
+44378
+
+addRecord
+no: 44378
+name[]: Bruce
+
+address[]: 555 Star port
+sunshine way
+the moon
+
+
+Choose another option
+add: This adds a new record in the database
+printall: This prints all record in the databse
+find: This finds record(s) with a specified amount
+delete: This deletes an existing record from the database
+quit: quits program
+prin
+
+printAllRecords
+
+Choose another option
+add: This adds a new record in the database
+printall: This prints all record in the databse
+find: This finds record(s) with a specified amount
+delete: This deletes an existing record from the database
+quit: quits program
+fin
+Enter account number of account to find
+1256
+
+findRecord
+no: 1256
+
+Choose another option
+add: This adds a new record in the database
+printall: This prints all record in the databse
+find: This finds record(s) with a specified amount
+delete: This deletes an existing record from the database
+quit: quits program
+del
+Enter account number of account to delete
+4456
+
+deleteRecord
+no: 4456
+
+Choose another option
+add: This adds a new record in the database
+printall: This prints all record in the databse
+find: This finds record(s) with a specified amount
+delete: This deletes an existing record from the database
+quit: quits program
+qu
+
+Thank You. Good Bye.
+]0;micah43@uhx02:~/homework3buhx02:/home/m/micah43/homework3b% exit
+exit
+
+Script done on Sun 25 Sep 2022 12:14:05 AM HST

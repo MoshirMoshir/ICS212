@@ -2,17 +2,17 @@
 //
 //  NAME:        Alexander Moshir
 //
-//  HOMEWORK:    3b
+//  HOMEWORK:    Project 1
 //
 //  CLASS:       ICS 212
 //
 //  INSTRUCTOR:  Ravi Narayan
 //
-//  DATE:        September 24, 2022
+//  DATE:        October 29, 2022
 //
-//  FILE:        homework3b.c
+//  FILE:        user_interface.c
 //
-//  DESCRIPTION:
+//  DESCRIPTION: The user_interface from homework 3b.
 //   
 //   
 //   
@@ -20,13 +20,18 @@
 ****************************************************************/
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "database.h"
+
+int debugmode = 0;
 
 
 /*****************************************************************
 //
 //  Function name: main
 //
-//  DESCRIPTION:   Calls for a user input and prints out a table      
+//  DESCRIPTION:   A database of records with a UI to edit the database.     
 //
 //  Parameters:    argc (int) : The number of elements in argv
 //                 argv (char*[]) : An array of arguments passed
@@ -39,34 +44,205 @@
 int main(int argc, char* argv[])
 {
     struct record * start = NULL;
+    void getaddress(char inputAddress[], int size);
+    int quit = 0;
+    char input[10];
     
 
+    readfile(&start, "database_data");
+    if (argc == 2 && strcmp(argv[1], "debug") == 0)
+    {
+        debugmode = 1;
+    }
+    else if (argc > 1)
+    {
+        printf("\nerror: unknown argc\n");
+        quit = 1;
+    }
+    printf("--------------------------------------------------\n");
+    printf("Record Database Interface\n");
+    printf("\n   Welcome to the RDI, with this program, you can \n"
+           "create a database of records that hold a Name, \n"
+           "Account Number, and Address.\n");
+    printf("--------------------------------------------------\n");
+
+    printf("\nPlease type an option:\n");
+
+    while (quit == 0)
+    {
+        
+        printf("add      : adds a new record to the database\n"
+               "printall : prints all the records in the database\n"
+               "find     : finds a record in the database\n"
+               "delete   : deletes a record in the database\n"
+               "quit     : quits the program\n");
+
+        fgets(input, 10, stdin);
+        
+
+        if (strncmp(input, "q", 1) == 0)
+        {
+            if (strlen(input) > 5)
+            {
+                printf("\nerror: invalid input\n");
+            }
+            else
+            {
+                writefile(start, "database_data");
+                quit = 1;
+            }
+        }
+        else if (strncmp(input, "a", 1) == 0)
+        {
+            if (strlen(input) > 4)
+            {
+                printf("\nerror: invalid input\n");
+            }
+            else
+            {
+                char userName[30];
+                char userAddress[60];
+                int accountno;
+                int success = 0;
+                printf("\nInput a name:\n");
+                fgets(userName, 30, stdin);
+                printf("\nInput an address:\n");
+                getaddress(userAddress, 60);
+                printf("Input an account number:\n");
+                do
+                {
+                    fgets(input, 10, stdin);
+                    accountno = atoi(input);
+                    if (accountno <= 0)
+                    {
+                        printf("\nerror: invalid input\n");
+                        printf("The account number must be a positive number\n");
+                    }
+                    else
+                    {
+                        success++;
+                    }
+                
+                
+                }
+                while (success == 0);
+
+                addRecord(&start, accountno, userName, userAddress);
+            }
+        }
+        else if (strncmp(input, "p", 1) == 0)
+        {
+            if (strlen(input) > 9)
+            {
+                printf("\nerror: invalid input\n");
+            }
+            else
+            {
+                printAllRecords(start);
+            }
+        }
+        else if (strncmp(input, "f", 1) == 0)
+        {
+
+            if (strlen(input) > 5)
+            {
+                printf("\nerror: invalid input\n");                  
+            }
+            else
+            {
+                int accountno;
+                int success = 0;
+                printf("\nType an account number to find:\n");
+                do
+                {
+                    fgets(input, 10, stdin);
+                    accountno = atoi(input);
+                    if (accountno <= 0)
+                    {
+                        printf("\nerror: invalid input\n");
+                        printf("The account number must be a positive number\n");
+                    }
+                    else
+                    {
+                        success++;
+                    }
+                }
+                while (success == 0);
+
+                findRecord(start, accountno);
+            }
+        }
+        else if (strncmp(input, "d", 1) == 0)
+        {
+
+            if (strlen(input) > 7)
+            {
+                printf("\nerror: invalid input\n");
+            }
+            else 
+            {
+                int accountno;
+                int success = 0;
+                printf("\nType an account number to delete\n");
+                do
+                {
+                    fgets(input, 10, stdin);
+                    accountno = atoi(input);
+                    if (accountno <= 0)
+                    {
+                        printf("\nerror: invalid input\n");
+                        printf("The account number must be a positive number\n");
+                    }
+                    else
+                    {
+                        printf("account %d was deleted", accountno);
+                        success++;
+                    }
+
+
+                }
+                while (success == 0);
+
+                deleteRecord(&start, accountno);
+            }
+
+        }
+        else
+        {
+            printf("\nerror: option does not exist\n");
+        }
+        if (quit != 1)
+        {
+            printf("\nChoose another option:\n");
+        }
+
+    }
+    
+    printf("\nExiting the program...\n");
     return 0;
 
 }
 
-int add(struct record **r, int a, char b, char c)
+void getaddress(char Address[], int size)
 {
-    addRecord(r, a, b, c);
-    return 0;
-}
+    int i = 0;
+    char input;
+    char enterIn;
 
-int printall()
-{
-    return 0;
-}
+    while (i < size)
+    {
+        input = getchar();
+        if (input == '\n' && enterIn == '\n')
+        {
+            i = size;
+        }
+        else
+        {
+            Address[i] = input;
+            enterIn = input;
+            i++;
+        }
+    }
 
-int find()
-{
-    return 0;
-}
 
-int delete()
-{
-    return 0;
-}
-
-int quit()
-{
-    return 0;
 }

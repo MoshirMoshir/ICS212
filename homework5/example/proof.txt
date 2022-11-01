@@ -1,0 +1,9 @@
+Script started on Sat 08 Oct 2022 02:33:52 PM HST
+]0;micah43@uhx02:~/homework5[?1034huhx02:/home/m/micah43/homework5% make
+gcc -ansi -pedantic-errors -Wall -c driver.c
+gcc -ansi -pedantic-errors -Wall -c iofunctions.c
+gcc -o driver driver.o iofunctions.o
+]0;micah43@uhx02:~/homework5uhx02:/home/m/micah43/homework5% exit
+exit
+
+Script done on Sat 08 Oct 2022 02:34:02 PM HST

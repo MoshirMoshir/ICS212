@@ -1,0 +1,8 @@
+Script started on Sat 29 Oct 2022 06:39:43 PM HST
+]0;micah43@uhx02:~/project1[?1034huhx02:/home/m/micah43/project1% make
+gcc -ansi -pedantic-errors -Wall -c database.c
+gcc -o project user_interface.o database.o
+]0;micah43@uhx02:~/project1uhx02:/home/m/micah43/project1% exit
+exit
+
+Script done on Sat 29 Oct 2022 06:39:47 PM HST

@@ -1,0 +1,50 @@
+Script started on Sat 08 Oct 2022 02:36:14 PM HST
+]0;micah43@uhx02:~/homework5[?1034huhx02:/home/m/micah43/homework5% ./driver
+
+Enter a number of pokemon to add(max=4): 5
+
+Enter positive number less than 5: 6
+
+Enter positive number less than 5: 7
+
+Enter positive number less than 5: -1
+
+Enter positive number less than 5: 4
+
+Enter level of 1st pokemon: -2
+
+Enter positive number!-4
+
+Enter positive number!13
+
+Enter name of 1st pokemon: Lucario
+
+Enter level of 2nd pokemon: 39
+
+Enter name of 2nd pokemon: Snorlax
+
+Enter level of 3rd pokemon: -4
+
+Enter positive number!76
+
+Enter name of 3rd pokemon: Dragonite
+
+Enter level of 4th pokemon: 1 99
+
+Enter name of 4th pokemon: Giratina
+
+Enter file to access: pokemonteam
+Writing to pokemonteam
+Reading from pokemonteam
+13
+Lucario
+39
+Snorlax
+76
+Dragonite
+99
+Giratina
+]0;micah43@uhx02:~/homework5uhx02:/home/m/micah43/homework5% exit
+exit
+
+Script done on Sat 08 Oct 2022 02:38:35 PM HST
