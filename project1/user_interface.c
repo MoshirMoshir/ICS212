@@ -289,6 +289,17 @@ int main(int argc, char* argv[])
 
 }
 
+/*****************************************************************
+//
+//  Function name: getaddress
+//
+//  DESCRIPTION:   A database of records with a UI to edit the database.     
+//
+//  Parameters:    char Address[] : address to be inputted
+//                 int size : size of address
+//                                  
+****************************************************************/
+
 void getaddress(char Address[], int size)
 {
     int i = 0;

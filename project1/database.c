@@ -32,15 +32,14 @@ extern int debugmode;
 
 /*****************************************************************
 //
-//  Function name: main
+//  Function name: addRecord
 //
-//  DESCRIPTION:   Calls for a user input and prints out a table      
+//  DESCRIPTION:   Adds a record to the database list     
 //
-//  Parameters:    argc (int) : The number of elements in argv
-//                 argv (char*[]) : An array of arguments passed
-//                                  to the program.
-//
-//  Return values:  0 : success           
+//  Parameters:    struct record **start : address of the first record address in database
+//                 int uaccountno : account number to be added
+//                 char uname[] : account name to be added
+//                 char uaddress[] : account address to be added
 //
 ****************************************************************/
 
@@ -102,6 +101,16 @@ void addRecord(struct record **start, int uaccountno, char uname[], char uaddres
     }
 }
 
+/*****************************************************************
+//
+//  Function name: printAllRecords
+//
+//  DESCRIPTION:   Prints all records in database    
+//
+//  Parameters:    struct record *start : first record in database          
+//
+****************************************************************/
+
 void printAllRecords(struct record *start)
 {
     if (start == NULL || start->accountno == 0)
@@ -130,6 +139,20 @@ void printAllRecords(struct record *start)
         printf("debug: printAllRecords Function executed");
     }
 }
+
+/*****************************************************************
+//
+//  Function name: findRecord
+//
+//  DESCRIPTION:   Finds a record in the database    
+//
+//  Parameters:    struct record *start : first record in database
+//                 int uaccountno : account number to be found
+//
+//  Return values:  0 : success    
+//                  -1 : failed       
+//
+****************************************************************/
 
 int findRecord(struct record *start, int uaccountno)
 {
@@ -170,6 +193,20 @@ int findRecord(struct record *start, int uaccountno)
 
     return out;
 }
+
+/*****************************************************************
+//
+//  Function name: deleteRecord
+//
+//  DESCRIPTION:   deletes a record from the database     
+//
+//  Parameters:    struct record **start : address of address of the first record
+//                 int uaccountno : account number to be deleted
+//
+//  Return values:  0 : success
+//                  -1 : failed           
+//
+****************************************************************/
 
 int deleteRecord(struct record **start, int uaccountno)
 {
@@ -222,6 +259,20 @@ int deleteRecord(struct record **start, int uaccountno)
     return out;
 }
 
+/*****************************************************************
+//
+//  Function name: writefile
+//
+//  DESCRIPTION:   writes the database to a file    
+//
+//  Parameters:    struct record *start : first record in database
+//                 char file[] : file to be written to
+//
+//  Return values:  0 : success  
+//                  -1 : failed         
+//
+****************************************************************/
+
 int writefile(struct record *start, char file[])
 {
     int out = -1;
@@ -258,6 +309,20 @@ int writefile(struct record *start, char file[])
 
     return out;
 }
+
+/*****************************************************************
+//
+//  Function name: readfile
+//
+//  DESCRIPTION:   reads a file (database_data) to fill database  
+//
+//  Parameters:    struct record **start : address of address of first record
+//                 char file[] : file to be read
+//
+//  Return values:  0 : success 
+//                  -1 : failed          
+//
+****************************************************************/
 
 int readfile(struct record **start, char file[])
 {
@@ -351,6 +416,16 @@ int readfile(struct record **start, char file[])
 
     return out;
 }
+
+/*****************************************************************
+//
+//  Function name: cleanup
+//
+//  DESCRIPTION:   cleans up memory     
+//
+//  Parameters:    struct record **start : address of address of first record         
+//
+****************************************************************/
 
 void cleanup(struct record **start)
 {

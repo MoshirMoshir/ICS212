@@ -1,3 +1,22 @@
+
+/*****************************************************************
+//
+//  NAME:        Alexander Moshir
+//
+//  HOMEWORK:    Project 1
+//
+//  CLASS:       ICS 212
+//
+//  INSTRUCTOR:  Ravi Narayan
+//
+//  DATE:        October 29, 2022
+//
+//  FILE:        database.c
+//
+//  DESCRIPTION:
+//   reference file for functions in database.c
+//
+****************************************************************/
 #include "record.h"
 void addRecord(struct record **, int, char [ ], char [ ]);
 void printAllRecords(struct record *);
