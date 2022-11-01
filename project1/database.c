@@ -95,6 +95,11 @@ void addRecord(struct record **start, int uaccountno, char uname[], char uaddres
         temp->next = NULL;
         *start = temp;
     }
+
+    if(debugmode == 1)
+    {
+        printf("debug: addRecord Function executed");
+    }
 }
 
 void printAllRecords(struct record *start)
@@ -118,6 +123,11 @@ void printAllRecords(struct record *start)
             start = start->next;
         }
         printf("--------------------------------------------------\n");
+    }
+
+    if(debugmode == 1)
+    {
+        printf("debug: printAllRecords Function executed");
     }
 }
 
@@ -151,6 +161,11 @@ int findRecord(struct record *start, int uaccountno)
     if (out == -1)
     {
         printf("\naccount does not exist\n");
+    }
+
+    if(debugmode == 1)
+    {
+        printf("debug: findRecord Function executed");
     }
 
     return out;
@@ -193,11 +208,16 @@ int deleteRecord(struct record **start, int uaccountno)
     }
     else
     {
-        printf("\nrecord does not exist\n");
+        printf("\naccount does not exist\n");
     }
 
     temp = NULL;
     tempnext = NULL;
+
+    if(debugmode == 1)
+    {
+        printf("debug: deleteRecord Function executed");
+    }
 
     return out;
 }
@@ -217,8 +237,8 @@ int writefile(struct record *start, char file[])
             while (start != NULL)
             {
                 fprintf(write, "%d", start->accountno);
-                fprintf(write, "\n%s", start->name);
-                fprintf(write, "%s/n", start->address);
+                fprintf(write, "%s", start->name);
+                fprintf(write, "%s\n", start->address);
     
                 start = start->next;
             }
@@ -231,6 +251,11 @@ int writefile(struct record *start, char file[])
         printf("\nerror: unable to write a file\n");
     }
 
+    if(debugmode == 1)
+    {
+        printf("debug: writefile Function executed");
+    }
+
     return out;
 }
 
@@ -238,6 +263,7 @@ int readfile(struct record **start, char file[])
 {
     int out = -1;
     struct record *temp;
+    struct record *prevTemp;
     int uaccountno;
     char uname[30];
     char uaddress[60];
@@ -272,20 +298,22 @@ int readfile(struct record **start, char file[])
                         prevInput = input;
                         i++;
                     }
-                    prevInput = input;
                 }
             }
             strcpy(temp->address, uaddress);
             *start = temp;
-            temp = temp->next;
+            prevTemp = temp;
+            temp = prevTemp->next;
         }
-        while (temp != NULL && !feof(read))
+        while (prevTemp != NULL && !feof(read))
         {
+            temp = (struct record*)malloc(sizeof(struct record));
             fscanf(read, "%i", &uaccountno);
             temp->accountno = uaccountno;
-            fscanf(read, "%s", &uname);
+            fgets(uname, 30, read);
             strcpy(temp->name, uname);
             i = 0;
+            temp->next = prevTemp->next;
             while (running == 0 && !feof(read))
             {  
                 if ((input = fgetc(read)) == '\n' && prevInput == '\n')
@@ -300,12 +328,12 @@ int readfile(struct record **start, char file[])
                         prevInput = input;
                         i++;
                     }
-                    
                 }
             }
             strcpy(temp->address, uaddress);
-
-            temp = temp->next;
+            prevTemp->next = temp;
+            prevTemp = temp;
+            temp = prevTemp->next;
         }
         fclose(read);
         out = 0;
@@ -314,6 +342,11 @@ int readfile(struct record **start, char file[])
     {
         printf("\ndatabase_data not found, creating new file...\n");
         writefile(NULL, "database_data");
+    }
+
+    if(debugmode == 1)
+    {
+        printf("debug: readfile Function executed");
     }
 
     return out;
@@ -331,4 +364,9 @@ void cleanup(struct record **start)
         temp = tempnext;
     }
     *start = NULL;
+
+    if(debugmode == 1)
+    {
+        printf("debug: cleanup Function executed");
+    }
 }

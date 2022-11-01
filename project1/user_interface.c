@@ -66,6 +66,11 @@ int main(int argc, char* argv[])
            "Account Number, and Address.\n");
     printf("--------------------------------------------------\n");
 
+    if(debugmode == 1)
+    {
+        printf("debug: Menu UI Interface Successful");
+    }
+
     printf("\nPlease type an option:\n");
 
     while (quit == 0)
@@ -85,11 +90,19 @@ int main(int argc, char* argv[])
             if (strlen(input) > 5)
             {
                 printf("\nerror: invalid input\n");
+                if(debugmode == 1)
+                {
+                    printf("debug: Quit Failed");
+                }
             }
             else
             {
                 writefile(start, "database_data");
                 quit = 1;
+                if(debugmode == 1)
+                {
+                    printf("debug: Quit Successful");
+                }
             }
         }
         else if (strncmp(input, "a", 1) == 0)
@@ -97,6 +110,10 @@ int main(int argc, char* argv[])
             if (strlen(input) > 4)
             {
                 printf("\nerror: invalid input\n");
+                if(debugmode == 1)
+                {
+                    printf("debug: Add Failed");
+                }
             }
             else
             {
@@ -117,10 +134,18 @@ int main(int argc, char* argv[])
                     {
                         printf("\nerror: invalid input\n");
                         printf("The account number must be a positive number\n");
+                        if(debugmode == 1)
+                        {
+                            printf("debug: Negative Number Attempted to be Inputted");
+                        }
                     }
                     else
                     {
                         success++;
+                        if(debugmode == 1)
+                        {
+                            printf("debug: Add Successful");
+                        }
                     }
                 
                 
@@ -128,6 +153,7 @@ int main(int argc, char* argv[])
                 while (success == 0);
 
                 addRecord(&start, accountno, userName, userAddress);
+                printf("\nThe account was added succesfully\n");
             }
         }
         else if (strncmp(input, "p", 1) == 0)
@@ -135,10 +161,18 @@ int main(int argc, char* argv[])
             if (strlen(input) > 9)
             {
                 printf("\nerror: invalid input\n");
+                if(debugmode == 1)
+                {
+                    printf("debug: Printall failed");
+                }
             }
             else
             {
                 printAllRecords(start);
+                if(debugmode == 1)
+                {
+                    printf("debug: Printall Successful");
+                }
             }
         }
         else if (strncmp(input, "f", 1) == 0)
@@ -146,7 +180,11 @@ int main(int argc, char* argv[])
 
             if (strlen(input) > 5)
             {
-                printf("\nerror: invalid input\n");                  
+                printf("\nerror: invalid input\n");   
+                if(debugmode == 1)
+                {
+                    printf("debug: Find Failed");
+                }               
             }
             else
             {
@@ -161,6 +199,10 @@ int main(int argc, char* argv[])
                     {
                         printf("\nerror: invalid input\n");
                         printf("The account number must be a positive number\n");
+                        if(debugmode == 1)
+                        {
+                            printf("debug: Negative Number Attempted to be Inputted");
+                        }
                     }
                     else
                     {
@@ -170,6 +212,10 @@ int main(int argc, char* argv[])
                 while (success == 0);
 
                 findRecord(start, accountno);
+                if(debugmode == 1)
+                {
+                    printf("debug: Find Succesful");
+                }
             }
         }
         else if (strncmp(input, "d", 1) == 0)
@@ -178,6 +224,10 @@ int main(int argc, char* argv[])
             if (strlen(input) > 7)
             {
                 printf("\nerror: invalid input\n");
+                if(debugmode == 1)
+                {
+                    printf("debug: Delete Failed");
+                }
             }
             else 
             {
@@ -192,6 +242,10 @@ int main(int argc, char* argv[])
                     {
                         printf("\nerror: invalid input\n");
                         printf("The account number must be a positive number\n");
+                        if(debugmode == 1)
+                        {
+                            printf("debug: Negative Number Attempted to be Inputted");
+                        }
                     }
                     else
                     {
@@ -204,16 +258,28 @@ int main(int argc, char* argv[])
                 while (success == 0);
 
                 deleteRecord(&start, accountno);
+                if(debugmode == 1)
+                {
+                    printf("debug: Deleted Succesful");
+                }
             }
 
         }
         else
         {
             printf("\nerror: option does not exist\n");
+            if(debugmode == 1)
+            {
+                printf("debug: Input did not match any options");
+            }
         }
         if (quit != 1)
         {
             printf("\nChoose another option:\n");
+            if(debugmode == 1)
+            {
+                printf("debug: Quit parameters not met, relaunching menu");
+            }
         }
 
     }
@@ -242,6 +308,11 @@ void getaddress(char Address[], int size)
             enterIn = input;
             i++;
         }
+    }
+
+    if(debugmode == 1)
+    {
+        printf("debug: getaddress Function executed");
     }
 
 
