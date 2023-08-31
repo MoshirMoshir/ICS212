@@ -1,0 +1,32 @@
+Script started on Wed 30 Aug 2023 06:46:24 PM HST
+]0;moshir@uhx02:~/ICS212Fall2023/homework1[?1034huhx02:/home/m/moshir/ICS212Fall2023/homework1% pwd
+/home/m/moshir/ICS212Fall2023/homework1
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% mkdir unix_prac
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% cp ho[Komework1 unix_prac
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% cd unix_prac/[K
+]0;moshir@uhx02:~/ICS212Fall2023/homework1/unix_pracuhx02:/home/m/moshir/ICS212Fall2023/homework1/unix_prac% mc homework1 hw1
+bash: mc: command not found
+]0;moshir@uhx02:~/ICS212Fall2023/homework1/unix_pracuhx02:/home/m/moshir/ICS212Fall2023/homework1/unix_prac% mc homework1 hw1[C[1P[1@v
+]0;moshir@uhx02:~/ICS212Fall2023/homework1/unix_pracuhx02:/home/m/moshir/ICS212Fall2023/homework1/unix_prac% ./hw1
+Hello
+Hello
+World
+World
+!!!
+While loop!
+While loop!
+While loop!
+While loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+]0;moshir@uhx02:~/ICS212Fall2023/homework1/unix_pracuhx02:/home/m/moshir/ICS212Fall2023/homework1/unix_prac% rm hw1 
+]0;moshir@uhx02:~/ICS212Fall2023/homework1/unix_pracuhx02:/home/m/moshir/ICS212Fall2023/homework1/unix_prac% cd..[K[K ..
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% rmdir unix_prac/
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% pwd[K[K[Kls
+helloworld.class  helloworld.java  [0m[38;5;34mhomework1[0m  homework1.c  homework1.o  output.txt  proof.txt  unix_prac.txt
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% exit
+exit
+
+Script done on Wed 30 Aug 2023 06:49:33 PM HST

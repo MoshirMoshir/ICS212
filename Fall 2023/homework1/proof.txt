@@ -1,0 +1,8 @@
+Script started on Wed 30 Aug 2023 06:41:54 PM HST
+]0;moshir@uhx02:~/ICS212Fall2023/homework1[?1034huhx02:/home/m/moshir/ICS212Fall2023/homework1% lscd ics212ls[Ktar zcvf homework7.tar.gz homework7.cpp proof.txt output.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ics212ls[K[Kgcc -ansi -pedantic-errors -Wall -c homework1.c
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% gcc -o homework1 homework1.o
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% javac homwor[K[Kework[K[K[K[K[K[Kework[K[K[K[K[K[K[Kelloworld.java
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% exit
+exit
+
+Script done on Wed 30 Aug 2023 06:42:58 PM HST

@@ -1,0 +1,33 @@
+Script started on Wed 30 Aug 2023 06:43:21 PM HST
+]0;moshir@uhx02:~/ICS212Fall2023/homework1[?1034huhx02:/home/m/moshir/ICS212Fall2023/homework1% ./homework1 
+Hello
+Hello
+World
+World
+!!!
+While loop!
+While loop!
+While loop!
+While loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% java hellowowlr[K[K[K[Korld
+Hello
+Hello
+World
+World
+!!!
+While loop!
+While loop!
+While loop!
+While loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+Do-while loop!
+]0;moshir@uhx02:~/ICS212Fall2023/homework1uhx02:/home/m/moshir/ICS212Fall2023/homework1% exit
+exit
+
+Script done on Wed 30 Aug 2023 06:43:40 PM HST
