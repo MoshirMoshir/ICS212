@@ -8,7 +8,7 @@
 //
 //  INSTRUCTOR:  Ravi Narayan
 //
-//  DATE:        September 3, 2023
+//  DATE:        September 2, 2023
 //
 //  FILE:        homework1.c
 //
