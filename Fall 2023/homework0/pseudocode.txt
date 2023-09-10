@@ -15,15 +15,17 @@ copy from 0 to i
 define an int called tempM
 copy from m to tempM
 
-while ( i < tempM )
-    if ( num > numbers[i])
-        copy from i + 1 to i
-    else
+while ( i <= m )
+    if ( num < numbers[i])
+        while ( i <= m)
         copy from numbers[i] to temp
         copy from num to numbers[i]
-        copy from temp to numbers[i + 1]
-        copy from m + 1 to m
-
+        copy from temp to num
+        copy from i + 1 to i
+    else if (i == m)
+        copy from num to numbers[i]
+        copy from i + 1 to i
+copy from m + 1 to m
 
         
 
