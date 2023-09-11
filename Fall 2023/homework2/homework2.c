@@ -60,14 +60,12 @@ int main(int argc, char* argv[])
 
 int user_interface()
 {
+    int in = 0;
+    char temp[999];
+
     printf("This program will generate a table of numbers up to the number you enter and label them even or odd.\n");
     printf("Enter maximum number to show: ");
-
-    int in = 0;
     scanf("%d", &in);
-
-    // check it input is valid positive number
-    char temp[999];
     while(in <= 0)
     {
         printf("Invalid input. Please enter a positive number: ");
@@ -77,7 +75,6 @@ int user_interface()
     }
 
     return in;
-
 }
 
 /*****************************************************************
@@ -123,19 +120,17 @@ int is_even(int num)
 
 void print_table(int end)
 {
-    int temp = 0;
-
+    int i = 0;
     printf("Number\tEven or Odd?\n");
-    while(temp <= end)
+    for(i = 0; i <= end; i++)
     {
-        if(is_even(temp) == 1)
+        if(is_even(i) == 1)
         {
-            printf("%6d\tEven\n", temp);
+            printf("%6d\tEven\n", i);
         }
         else
         {
-            printf("%6d\tOdd\n", temp);
+            printf("%6d\tOdd\n", i);
         }
-        temp++;
     }
 }
