@@ -1,0 +1,4 @@
+The most interesting thing I noticed when tracing the code and converting the hex into decimal, was that the houses weren't
+necessarily in order. argc and argv already start off by going (all decimal preceded by 140722338749---)148, then 136 respectively.
+While then num1 and num2 would jump to the 60s and increase: 160, then 164 respectively. Similar patterns would occur in the 
+rest of the trace; where once the varible type changed, the house kind of jumped forwards and/or backwards.
