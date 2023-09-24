@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 {
     struct record * start = NULL;
     int running = 1;
-    char user_input[10];
+    char user_input[20];
 
     /* Checks for debug mode */
     if (argc == 2 && strcmp(argv[1], "debug") == 0)
@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
     } 
     else if (argc > 1)
     {
-        printf("\nError: Incorrect argument, terminating...\n");
+        printf("\nError: Incorrect argument\n\nterminating...\n");
         running = 0;
     }
 
@@ -63,14 +63,14 @@ int main(int argc, char* argv[])
         printf("\nWelcome to the Bank Database!\n");
         do
         {
-            printf("\nPlease choose one of the following options by typing the option\n");
-            printf("add: This adds a new record in the database\n");
-            printf("printall: This prints all record in the database\n");
-            printf("find: This finds record(s) with a specified amount\n");
-            printf("delete: This deletes an existing record from the database\n");
-            printf("quit: quits program\n");
+            printf("\nPlease type one of the following options\n");
+            printf("  add      : This adds a new record in the database\n");
+            printf("  printall : This prints all record in the database\n");
+            printf("  find     : This finds record(s) with a specified amount\n");
+            printf("  delete   : This deletes an existing record from the database\n");
+            printf("  quit     : quits program\n");
 
-            fgets(user_input, 10, stdin);
+            fgets(user_input, 20, stdin);
             if (strncmp(user_input, "add", strlen(user_input) - 1) == 0 && strlen(user_input) <= 4)
             {
                 char name[50];
@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
                 getaddress(address, 80);
                 addRecord(&start, account_no, name, address);
             }
-            else if (strncmp(user_input, "printall", strlen(user_input) - 1) == 0 && strlen(user_input) <= 8)
+            else if (strncmp(user_input, "printall", strlen(user_input) - 1) == 0 && strlen(user_input) <= 9)
             {
                 printAllRecords(start);
             }
@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
             }
             else if (strncmp(user_input, "quit", strlen(user_input) - 1) == 0 && strlen(user_input) <= 5)
             {
-                printf("\nThank you for using the Bank Database\nGoodbye\n");
+                printf("\nThank you for using the Bank Database!\n\nGoodbye...\n");
                 running = 0;
             }
             else
@@ -173,7 +173,7 @@ void getaddress(char address[], int size)
 
     if (debugmode == 1)
     {
-        printf("\ngetaddress(%p, %d)\n", address, size);
+        printf("\ngetaddress(%s, %d)\n", address, size);
     }
 
     printf("\nPlease enter an address: ");
