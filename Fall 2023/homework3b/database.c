@@ -6,7 +6,7 @@ void addRecord (struct record **r, int a, char b[], char c[])
 {
     if (debugmode == 1)
     {
-        printf("\naddRecord(%d, %d, %s, %s)\n", r, a, b, c);
+        printf("\naddRecord(%p, %d, %s, %s)\n", r, a, b, c);
     }
 }
 
@@ -30,6 +30,6 @@ int deleteRecord(struct record **r, int a)
 {
     if (debugmode == 1)
     {
-        printf("\ndeleteRecord(%d, %d)\n", r, a);
+        printf("\ndeleteRecord(%p, %d)\n", r, a);
     }
 }

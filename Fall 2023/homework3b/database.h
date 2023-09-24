@@ -1,3 +1,4 @@
+#include "record.h"
 void addRecord (struct record **, int, char [ ],char [ ]);
 void printAllRecords(struct record *);
 int findRecord (struct record *, int);
