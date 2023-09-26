@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------
+addRecord
+
+*** Assume the following variables are already defined. ***
+
+- start: The pointer to the first record of the list (or NULL)
+- uaccountno: The user's account number (integer)
+- uname: a character array containing the user's name
+- uaddress: a character array containing the user's address
+
+Structure definition:
+struct record
+{
+    int               accountno;
+    char              name[30];
+    char              address[50];
+    struct record*    next;
+};
+--------------------------------------------------------------------------------
+
+define a pointer to record called temp
+allocate a heap space and store its address into temp
+
+if( start is equal to NULL )
+{ 
+    copy from uaccountno to accountno in the record whose address is in temp
+    copy from uname to name in the record whose address is in temp
+    copy from uaddress to address in the record whose address is in temp
+    copy from NULL to next in the record whose address is in temp
+    copy from temp to start
+}
+else
+{
+    copy from start to temp
+    while (accountno in the record whose address is in temp is greater than uaccountno || next in the record whose address is in temp is equal to NULL)
+    {
+        copy from next in the record whose address is in temp to temp
+    }
+    copy from temp to next in the record whose address is in temp
+    copy from uaccountno to account no in the record whose address is in temp
+    copy from uname to name in the record whose address is in temp
+    copy from uaddress to address in the record whose address is in temp
+}
+
+
+
