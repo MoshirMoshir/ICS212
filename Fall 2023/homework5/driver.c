@@ -42,7 +42,6 @@ int main (int argc, char* argv[])
     int num;
     
     char file[30] = "test.txt";
-    int i = 0;
     
     /* Test 1 */
     printf("Test 1: Write and Read 2 pokemon to file\n");
@@ -56,11 +55,13 @@ int main (int argc, char* argv[])
     pokearray[1].level = 99;
     strcpy(pokearray[1].name, "Ralts");
 
-    printf("Writing to %s\n", file);
+    printf("\nWriting to %s\n", file);
     writefile(pokearray, num, file);
 
-    printf("Reading from %s\n", file);
+    printf("\nReading from %s\n", file);
+    printf("\\/\\/\\/\\/\\/\\/\\/\\/\n");
     readfile(pokearray, &num, file);
+    printf("/\\/\\/\\/\\/\\/\\/\\/\\\n");
 
     /* Test 2 */
     printf("\nTest 2: Write and Read 4 pokemon to file (should overwrite Test 1\n");
@@ -82,11 +83,13 @@ int main (int argc, char* argv[])
     pokearray[3].level = 50;
     strcpy(pokearray[3].name, "Pikachu");
 
-    printf("Writing to %s\n", file);
+    printf("\nWriting to %s\n", file);
     writefile(pokearray, num, file);
 
-    printf("Reading from %s\n", file);
+    printf("\nReading from %s\n", file);
+    printf("\\/\\/\\/\\/\\/\\/\\/\\/\n");
     readfile(pokearray, &num, file);
+    printf("/\\/\\/\\/\\/\\/\\/\\/\\\n");
 
         /* Test 3 */
     printf("Test 3: Repeat Test 1 (should overwrite Test 2)\n");
@@ -100,11 +103,13 @@ int main (int argc, char* argv[])
     pokearray[1].level = 99;
     strcpy(pokearray[1].name, "Ralts");
 
-    printf("Writing to %s\n", file);
+    printf("\nWriting to %s\n", file);
     writefile(pokearray, num, file);
 
-    printf("Reading from %s\n", file);
+    printf("\nReading from %s\n", file);
+    printf("\\/\\/\\/\\/\\/\\/\\/\\/\n");
     readfile(pokearray, &num, file);
+    printf("/\\/\\/\\/\\/\\/\\/\\/\\\n");
 
     return 0;
 
