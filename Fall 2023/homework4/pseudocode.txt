@@ -37,7 +37,10 @@ else
         copy from next in the record whose address is in temp to temp
     }
     copy from temp to next in the record whose address is in temp
-    copy from uaccountno to account no in the record whose address is in temp
+    copy from accountno in the record whose address is in temp to accountno in the record whose address is in next in the record whose address is in temp
+    copy from name in the record whose address is in temp to name in the record whose address is in next in the record whose address is in temp
+    copy from address in the record whose address is in temp to address in the record whose address is in next in the record whose address is in temp
+    copy from uaccountno to accountno in the record whose address is in temp
     copy from uname to name in the record whose address is in temp
     copy from uaddress to address in the record whose address is in temp
 }
