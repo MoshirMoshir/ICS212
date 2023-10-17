@@ -1,0 +1,33 @@
+-----------------------------------
+deleteRecord
+
+- start: The pointer to the first record of the list (or NULL)
+- uaccountno: The user's account number (integer)
+
+Structure definition:
+struct record
+{
+    int               accountno;
+    char              name[30];
+    char              address[50];
+    struct record*    next;
+};
+-----------------------------------
+define a pointer to record called temp
+allocate a heap space and store its address into temp
+
+define a int called out
+copy from -1 to out
+
+copy from start to next in the record whose address is in temp
+
+while( accountno in the record whose address is in next in the record whose address is in temp is not equal to uaccountno && next in the record whose address is in temp is not equal to NULL )
+    copy from next in the record whose address is in temp to temp
+
+if (accountno in the record whose address is in next in the record whose address is in temp is equal to uaccountno)
+    copy from next in the record whose address is in next in the record whose address is in temp to next in the record whose address is in temp
+    copy from 0 to out
+
+
+return out
+
