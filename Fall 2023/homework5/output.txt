@@ -1,0 +1,52 @@
+Script started on Sun 08 Oct 2023 06:37:29 PM HST
+]0;moshir@uhx02:~/ICS212Fall2023/homework5[?1034huhx02:/home/m/moshir/ICS212Fall2023/homework5% ./driver 
+Test 1: Write and Read 2 pokemon to file
+Pokemon 1: Magikarp, Level 1
+Pokemon 2: Ralts, Level 99
+
+Writing to test.txt
+
+Reading from test.txt
+\/\/\/\/\/\/\/\/
+1
+Magikarp
+99
+Ralts
+/\/\/\/\/\/\/\/\
+
+Test 2: Write and Read 4 pokemon to file (should overwrite Test 1
+Pokemon 1: Gardevior, Level 100
+Pokemon 2: Magikarp, Level 99
+Pokemon 3: Pichu, Level 5
+Pokemon 4: Pikachu, Level 50
+
+Writing to test.txt
+
+Reading from test.txt
+\/\/\/\/\/\/\/\/
+100
+Gardevior
+99
+Magikarp
+5
+Pichu
+50
+Pikachu
+/\/\/\/\/\/\/\/\
+Test 3: Repeat Test 1 (should overwrite Test 2)
+Pokemon 1: Magikarp, Level 1
+Pokemon 2: Ralts, Level 99
+
+Writing to test.txt
+
+Reading from test.txt
+\/\/\/\/\/\/\/\/
+1
+Magikarp
+99
+Ralts
+/\/\/\/\/\/\/\/\
+]0;moshir@uhx02:~/ICS212Fall2023/homework5uhx02:/home/m/moshir/ICS212Fall2023/homework5% exit
+exit
+
+Script done on Sun 08 Oct 2023 06:37:36 PM HST
