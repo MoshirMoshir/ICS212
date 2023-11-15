@@ -1,0 +1,24 @@
+Note: conducted additional supplemental test besides those in testplan.xlsx (my testplan was not super thorough)
+
+Testplan Results:
+Address bug where two characters are added to the beginning of any Address inputted by the user
+
+Additionally Testing Results:
+read bug where only the first address in database.txt is read
+after running a command, entering no input will run the last command
+
+Overall Results:
+3 bugs found (refer above)
+Writefile successful
+Readfile failed
+UI successful
+UI Choice Selection successful (1 bug)
+All commands successful
+
+Recommendations:
+Improve UI interface; make more appealing
+Fix Readfile bug
+Fix Address input bug
+Fix no input command bug
+
+
