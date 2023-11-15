@@ -1,0 +1,50 @@
+Script started on Tue 14 Nov 2023 08:01:07 PM HST
+]0;moshir@uhx02:~/ICS212Fall2023/homework8[?1034huhx02:/home/m/moshir/ICS212Fall2023/homework8% ls
+[0m[38;5;34mhomework8[0m  homework8.c  homework8.o  Makefile  output.txt  proof.txt  request1.bin  request2.bin  request3.bin
+]0;moshir@uhx02:~/ICS212Fall2023/homework8uhx02:/home/m/moshir/ICS212Fall2023/homework8% ./homework8 
+Request1.bin:
+Source Port: 19171
+Destination Port: 60138
+Sequence Number: 4294906383
+Acknowledgment Number: 4099877425
+Control Bits set to 1: 4 5 
+
+Response1.bin:
+Source Port: 0
+Destination Port: 60138
+Sequence Number: 4294906383
+Acknowledgment Number: 4099877425
+Control Bits set to 1: 4 5 
+Request2.bin:
+Source Port: 57116
+Destination Port: 56543
+Sequence Number: 4294967275
+Acknowledgment Number: 132444993
+Control Bits set to 1: 4 5 
+
+Response2.bin:
+Source Port: 8
+Destination Port: 56543
+Sequence Number: 4294967275
+Acknowledgment Number: 132444993
+Control Bits set to 1: 4 5 
+Request3.bin:
+Source Port: 39330
+Destination Port: 33686
+Sequence Number: 3158774290
+Acknowledgment Number: 1659314263
+Control Bits set to 1: 4 5 
+
+Response3.bin:
+Source Port: 0
+Destination Port: 33686
+Sequence Number: 3158774290
+Acknowledgment Number: 1659314263
+Control Bits set to 1: 4 5 
+]0;moshir@uhx02:~/ICS212Fall2023/homework8uhx02:/home/m/moshir/ICS212Fall2023/homework8% ls
+[0m[38;5;34mhomework8[0m    homework8.o  output.txt  request1.bin  request3.bin   response2.bin
+homework8.c  Makefile     proof.txt   request2.bin  response1.bin  response3.bin
+]0;moshir@uhx02:~/ICS212Fall2023/homework8uhx02:/home/m/moshir/ICS212Fall2023/homework8% exit
+exit
+
+Script done on Tue 14 Nov 2023 08:01:23 PM HST

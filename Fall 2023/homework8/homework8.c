@@ -30,7 +30,7 @@ void makeheader(const unsigned char[], unsigned char[]);
 //
 //  Function name: main
 //
-//  DESCRIPTION:   Tests possible data to writefile and readfile          
+//  DESCRIPTION:   Takes the 3 input files and generates 3 output files          
 //
 //  Parameters:    argc (int) : The number of elements in argv
 //                 argv (char*[]) : An array of arguments passed
@@ -41,6 +41,41 @@ void makeheader(const unsigned char[], unsigned char[]);
 ****************************************************************/
 int main(int argc, char* argv[])
 {
+    const char request1[] = "request1.bin";
+    const char response1[] = "response1.bin";
+    const char request2[] = "request2.bin";
+    const char response2[] = "response2.bin";
+    const char request3[] = "request3.bin";
+    const char response3[] = "response3.bin";
+    unsigned char data[20];
+    unsigned char response[20];
+
+    readfile(request1, data);
+    printf("Request1.bin:\n");
+    printheader(data);
+    printf("\n");
+    makeheader(data, response);
+    printf("Response1.bin:\n");
+    printheader(response);
+    writefile(response1, response);
+
+    readfile(request2, data);
+    printf("Request2.bin:\n");
+    printheader(data);
+    printf("\n");
+    makeheader(data, response);
+    printf("Response2.bin:\n");
+    printheader(response);
+    writefile(response2, response);
+
+    readfile(request3, data);
+    printf("Request3.bin:\n");
+    printheader(data);
+    printf("\n");
+    makeheader(data, response);
+    printf("Response3.bin:\n");
+    printheader(response);
+    writefile(response3, response);
 
     return 0;
 }
@@ -48,71 +83,105 @@ int main(int argc, char* argv[])
 //
 //  Function name: readfile();
 //
-//  DESCRIPTION:   reads a file (database_data) to fill database  
+//  DESCRIPTION:   reads input file and stores data in data[]
 //
-//  Parameters:    struct record **start : address of address of first record
-//                 char file[] : file to be read
+//  Parameters:    const char filename[] : file to be read
+//                 unsigned char data[] : array to store data
 //
 //  Return values:  0 : success 
 //                 -1 : failed          
 //
 ****************************************************************/
-int readfile(const char a[], unsigned char b[])
+int readfile(const char filename[], unsigned char data[])
 {
-    FILE *fp = fopen("INPUT", "r");
-    int bytes_read;
-
-    bytes_read = fread(b, sizeof(a) + 1, 1, fp);
-    if (bytes_read == -1) {
-        perror("fread failed");
-        fclose(fp);
-        return 1;
-    } else if (bytes_read != sizeof(a)) {
-        fprintf(stderr, "expected to read %d bytes, actually read %d\n", sizeof(my_header), bytes_read);
-        fclose(fp);
-        return 1;
+    int out = 0;
+    FILE *file = fopen(filename, "rb");
+    if (file == NULL) {
+        out = -1; 
     }
 
-    fclose(fp);
-    return 0;
-}
+    fread(data, sizeof(unsigned char), 20, file);
+    fclose(file);
 
-int writefile(const char a[], const unsigned char b[])
-{
-    return -1;
+    return out; 
 }
-
-void printheader(const unsigned char a[])
+/*****************************************************************
+//
+//  Function name: writefile();
+//
+//  DESCRIPTION:   writes a response file based on data[]
+//
+//  Parameters:    const char filename[] : file to be written
+//                 const unsigned char data[] : data
+//
+//  Return values:  0 : success 
+//                 -1 : failed          
+//
+****************************************************************/
+int writefile(const char filename[], const unsigned char data[])
 {
+    int out = 0;
+    FILE *file = fopen(filename, "wb");
+    if (file == NULL) {
+        out = -1; 
+    }
+
+    fwrite(data, sizeof(unsigned char), 20, file);
+
+    fclose(file);
+    return out; 
+}
+/*****************************************************************
+//
+//  Function name: printheader();
+//
+//  DESCRIPTION:   prints out header
+//
+//  Parameters:    const unsigned char data[] : data to be printed          
+//
+****************************************************************/
+void printheader(const unsigned char data[])
+{
+    unsigned int sourcePort = (data[0] << 8) | data[1];
+    unsigned int destPort = (data[2] << 8) | data[3];
+    unsigned int sequenceNum = (data[4] << 24) | (data[5] << 16) | (data[6] << 8) | data[7];
+    unsigned int ackNum = (data[8] << 24) | (data[9] << 16) | (data[10] << 8) | data[11];
     int i;
-    unsigned int sequence;
-    unsigned int acknowledgement;
-    //print source port (decimal number)
-    for (i = 0; i < 16; i++)
-    {
-        printf("%d", a[i]);
+
+    printf("Source Port: %u\n", sourcePort);
+    printf("Destination Port: %u\n", destPort);
+    printf("Sequence Number: %u\n", sequenceNum);
+    printf("Acknowledgment Number: %u\n", ackNum);
+
+    printf("Control Bits set to 1: ");
+    for (i = 12; i < 18; ++i) {
+        if ((data[i] >> 7) & 1) {
+            printf("%d ", i - 12);
+        }
     }
-    //print destination port (decimal number)
-    for (i = 16; i < 32; i++)
-    {
-        printf("%d", a[i]);
-    }
-    //print sequence number ((unsigned) decimal number)
-    for (i = 32; i < 64; i++)
-    {
-        sequence += a[i];
-    }
-    printf("%u", sequence);
-    //print acknowledgement number ((unsigned) decimal number)
-    for (i = 64; i < 96; i++)
-    {
-        acknowledgement += a[i];
-    }
-    printf("%u", acknowledgement);
-    // print control bits
+    printf("\n");
 }
-
-void makeheader(const unsigned char a[], unsigned char b[])
+/*****************************************************************
+//
+//  Function name: makeheader();
+//
+//  DESCRIPTION:   creates a response header based on header[]
+//
+//  Parameters:    const unsigned char header[] : header to be read
+//                 unsigned char response[] : response header
+//
+****************************************************************/
+void makeheader(const unsigned char header[], unsigned char response[])
 {
+    unsigned int sourcePort = (header[0] << 8) | header[1];
+    int i;
 
+    if (sourcePort > 32767) {
+        response[1] ^= (1 << 3);  
+        response[0] ^= (1 << 10); 
+    }
+
+    for (i = 2; i < 20; ++i) {
+        response[i] = header[i];
+    }
 }
