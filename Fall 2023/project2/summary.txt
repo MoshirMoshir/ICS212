@@ -1,0 +1,7 @@
+Was unable to ever compile my code with the make file properly, and honestly spent way to long trying 
+to create weird code to get it to compile.
+
+Theoretically, based on traces, all code should be functional as the logic is based 
+directly on the previous project, with the exception of the readfile function possibly not working. 
+
+Additionally, the debug mode is not setup correctly since I could not get it to compile at all :(
