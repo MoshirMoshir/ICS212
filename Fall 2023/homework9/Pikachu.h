@@ -24,8 +24,8 @@
 class Pikachu : public Pokemon {
 public:
     Pikachu();
-    virtual ~Pikachu() override;
-    virtual void printData() override;
+    virtual ~Pikachu();
+    virtual void printData();
 };
 
 #endif // PIKACHU_H

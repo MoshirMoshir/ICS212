@@ -39,3 +39,14 @@ Pokemon::Pokemon() {
 Pokemon::~Pokemon() {
     std::cout << "Pokemon Destructor\n";
 }
+
+/*****************************************************************
+//
+//  Function name: printData()
+//
+//  DESCRIPTION:   Parent class for printData
+//
+****************************************************************/
+void Pokemon::printData() {
+    std::cout << "Pokemon - Type: " << type << ", Weight: " << weight << " kg\n";
+}

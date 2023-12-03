@@ -24,8 +24,8 @@
 class Dragapult : public Pokemon {
 public:
     Dragapult();
-    virtual ~Dragapult() override;
-    virtual void printData() override;
+    virtual ~Dragapult();
+    virtual void printData();
 };
 
 #endif // Dragapult_H

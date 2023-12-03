@@ -30,7 +30,7 @@ protected:
 public:
     Pokemon();
     virtual ~Pokemon();
-    virtual void printData() = 0;
+    virtual void printData();
 };
 
 #endif // POKEMON_H

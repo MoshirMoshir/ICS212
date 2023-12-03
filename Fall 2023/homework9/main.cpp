@@ -71,9 +71,10 @@ int main(int argc, char* argv[]) {
     pokedex[dragapultNickname] = dragapult;
 
     std::cout << "Checking Pokedex:\n";
-    for (const auto& entry : pokedex) {
-        std::cout << "Nickname: " << entry.first << "\n";
-        checkPokedex(entry.second);
+    std::vector<std::string>::iterator nicknameIt = nicknames.begin();
+    for (; nicknameIt != nicknames.end(); ++nicknameIt) {
+        std::cout << "Nickname: " << *nicknameIt << "\n";
+        checkPokedex(pokedex[*nicknameIt]);
         std::cout << "----------------------\n";
     }
 

@@ -1,8 +1,8 @@
 homework9 : main.o Pokemon.o Dragapult.o Gardevoir.o Pikachu.o
-	g++ -o project main.o Pokemon.o Dragapult.o Gardevoir.o Pikachu.o
+	g++ -o homework9 main.o Pokemon.o Dragapult.o Gardevoir.o Pikachu.o
 
-main.o : user_interface.cpp llist.h record.h
-	g++ -ansi -pedantic-errors -Wall -c user_interface.cpp
+main.o : main.cpp 
+	g++ -ansi -pedantic-errors -Wall -c main.cpp
 
 Pokemon.o : Pokemon.cpp Pokemon.h 
 	g++ -ansi -pedantic-errors -Wall -c Pokemon.cpp

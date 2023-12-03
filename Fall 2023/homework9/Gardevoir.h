@@ -24,8 +24,8 @@
 class Gardevoir : public Pokemon {
 public:
     Gardevoir();
-    virtual ~Gardevoir() override;
-    virtual void printData() override;
+    virtual ~Gardevoir();
+    virtual void printData();
 };
 
 #endif // GARDEVOIR_H
