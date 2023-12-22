@@ -1,0 +1,2 @@
+Grade: 7.9/13
+Feedback: allocate space for deleteRecord??? Memory leak x2

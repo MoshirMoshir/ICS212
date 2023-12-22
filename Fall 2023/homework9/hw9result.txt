@@ -1,0 +1,2 @@
+Grade: 8/10
+Feedback: coding style should be abstract calss checkPokedex didn't implemented correctly or missing prototype

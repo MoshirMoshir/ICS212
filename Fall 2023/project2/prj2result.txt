@@ -1,0 +1,2 @@
+Grade: 5/18
+Feedback: can't compile, no constructor and destructor implemented not output.txt no summary makefile was not followed the instruction header file was not followed the instruction

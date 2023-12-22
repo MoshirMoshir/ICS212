@@ -1,0 +1,2 @@
+Grade: 4.5/5
+Feedback: some datatype is wrong more details about memory allocate

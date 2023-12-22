@@ -1,0 +1,2 @@
+Grade: 2.3/6
+Feedback: errors on control bit 1st byte in response files are wrong read, write file will cause segmentation fault if can't open file none of the functions would work correctly
