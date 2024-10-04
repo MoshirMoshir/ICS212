@@ -16,24 +16,26 @@
 //
 ****************************************************************/
 
-int is_even(int);
+#include "homework10.h"
 
 /*****************************************************************
 //
-//  Function name: is_even();
+//  Function name: Java_homework10_is_1even
 //
 //  DESCRIPTION:   checks if parameter is even
 //
-//  Parameters:    int num : number to check
+//  Parameters:    JNIEnv *env : JNI environment
+//                 jclass  : class
+//                 jint    : number to check
 //
 //  Return values:  1 : even
 //                  0 : odd
 //
 ****************************************************************/
 
-int is_even(int num)
+JNIEXPORT jint JNICALL Java_homework10_is_1even(JNIEnv *env, jclass class, jint num)
 {
-    int out;
+   int out;
 
     if(num % 2 == 0)
     {
